@@ -61,4 +61,4 @@ Ensure you have the following installed:
 
    Gene Counts: results/featurecounts/ 
 
-   QC Reports: results/qc/
+   QC Reports: qc/
