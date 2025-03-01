@@ -51,10 +51,14 @@ Ensure you have the following installed:
 
 4. Output
 
-The pipeline generates:
+   The pipeline generates:
 
-** Trimmed Reads: results/trimmed/ **
-** Aligned Reads: results/alignment/ **
-** Trancripts Counts : results/salmon/ **
-** Gene Counts: results/featurecounts/ **
-** QC Reports: results/qc/ **
+   Trimmed Reads: results/trimmed/ 
+
+   Aligned Reads: results/alignment/ 
+ 
+   Trancripts Counts : results/salmon/
+
+   Gene Counts: results/featurecounts/ 
+
+   QC Reports: results/qc/
