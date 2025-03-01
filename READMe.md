@@ -35,8 +35,8 @@ Ensure you have the following installed:
 1. Clone this repository:  
 
    ```sh
-   git clone https://github.com/anamikagiri/rnaseq-snakemake.git
-   cd rnaseq-snakemake
+   git clone https://github.com/anamikagiri/rnaseq.git
+   cd rnaseq
 
 2. Activate the snakemake environment:
   
