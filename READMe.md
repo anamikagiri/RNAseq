@@ -40,21 +40,21 @@ Ensure you have the following installed:
 
 2. Activate the snakemake environment:
   
-  mamba activate snakemake
+   mamba activate snakemake
 
 3. Usage
 
-  Running the Pipeline:
-  For cluster execution (e.g., SLURM):
+   Running the Pipeline:
+   For cluster execution (e.g., SLURM):
 
-  snakemake --profile slurm_prof
+   snakemake --profile slurm_prof
 
 4. Output
 
 The pipeline generates:
 
-Trimmed Reads: results/trimmed/
-Aligned Reads: results/alignment/
-Isoforms Counts : results/salmon/
-Gene Counts: results/featurecounts/
-QC Reports: results/qc/ 
+** Trimmed Reads: results/trimmed/ **
+** Aligned Reads: results/alignment/ **
+** Trancripts Counts : results/salmon/ **
+** Gene Counts: results/featurecounts/ **
+** QC Reports: results/qc/ **
