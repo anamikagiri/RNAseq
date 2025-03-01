@@ -1,0 +1,11 @@
+name: rnaseq
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - fastqc
+  - trim-galore
+  - salmon
+  - subread
+  - multiqc
+  - STAR
