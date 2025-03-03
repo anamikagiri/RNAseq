@@ -57,8 +57,8 @@ Ensure you have the following installed:
 
    Aligned Reads: results/alignment/ 
  
-   Trancripts Counts : results/salmon/
+   Transcripts Counts : results/salmon/
 
-   Gene Counts: results/featurecounts/ 
+   Genes Counts: results/featurecounts/ 
 
    QC Reports: qc/
