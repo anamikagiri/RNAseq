@@ -1,20 +1,29 @@
 # Load config file
 configfile: "conf.yaml"
+from snakemake.io import glob_wildcards  
+
+#Give the path of folder with fastqs
+DATA_LOC = "/data/cephfs-1/scratch/groups/sanders/anamika_tmp/IBDome/"
 
 # Define the sample list
-SAMPLES = glob_wildcards("data/{sample}_R1.fastq.gz").sample
+#SAMPLES = glob_wildcards(f"{DATA_LOC}{{sample}}_R1_001.fastq.gz")
+#RAWDATA = config['rawdata']
+SAMPLES=glob_wildcards(DATA_LOC+"{sample}_R1_001.fastq.gz").sample
 print(SAMPLES)
+
 rule all:
     input:
         expand("results/salmon/{sample}/quant.sf", sample=SAMPLES),
         expand("results/featurecounts/{sample}.counts.txt", sample=SAMPLES),
-        expand("results/featurecounts/{sample}.counts.txt.summary", sample=SAMPLES)
+        expand("results/featurecounts/{sample}.counts.txt.summary", sample=SAMPLES),
+        expand("qc/{sample}_R1_fastqc.html", sample=SAMPLES),
+        expand("qc/{sample}_R2_fastqc.html", sample=SAMPLES)
 
 # Rule: Quality Control with FastQC
 rule fastqc:
     input:
-        "data/{sample}_R1.fastq.gz",
-        "data/{sample}_R2.fastq.gz"
+        DATA_LOC+"{sample}_R1_001.fastq.gz",
+        DATA_LOC+"{sample}_R2_001.fastq.gz"
     output:
         "qc/{sample}_R1_fastqc.html",
         "qc/{sample}_R2_fastqc.html"
@@ -26,8 +35,8 @@ rule fastqc:
 # Rule: Adapter Trimming with Trim Galore
 rule trim_galore:
     input:
-        r1="data/{sample}_R1.fastq.gz",
-        r2="data/{sample}_R2.fastq.gz"
+        r1=DATA_LOC+"{sample}_R1_001.fastq.gz",
+        r2=DATA_LOC+"{sample}_R2_001.fastq.gz"
     output:
         r1_trimmed="trimmed/{sample}_val_1.fq.gz",
         r2_trimmed="trimmed/{sample}_val_2.fq.gz"
