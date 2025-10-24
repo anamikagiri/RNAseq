@@ -62,3 +62,17 @@ Ensure you have the following installed:
    Genes Counts: results/featurecounts/ 
 
    QC Reports: qc/
+
+# DESeq2 Analysis: UC vs non-IBD
+
+This repository contains a differential expression analysis comparing **UC** vs **non-IBD** samples.
+
+## Volcano Plot
+Visualizes differentially expressed genes (log2 fold change vs adjusted p-value):
+
+![Volcano Plot](results/UC_vs_Control/Volcanoplot_IBDome_colon_UCvsControl.pdf)
+
+## Complex Heatmap
+Heatmap showing top 50 differentially expressed genes.
+
+![Heatmap](results/UC_vs_Control/complex_heatmap_top50DEGs_IBDome_colon_UCvsControl.pdf)
